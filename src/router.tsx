@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>hi</div>,
+    element: <div></div>,
   },
   {
     path: "/detail",
