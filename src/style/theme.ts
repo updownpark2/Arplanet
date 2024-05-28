@@ -34,13 +34,13 @@ export const theme: Theme = {
       large: "24px",
     },
     weight: {
-      thin: "200",
+      thin: "100",
       medium: "400",
       thick: "600",
     },
   },
   viewSize: {
-    phone: "500",
-    pc: "1080",
+    phone: "500px",
+    pc: "1080px",
   },
 };
