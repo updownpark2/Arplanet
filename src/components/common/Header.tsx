@@ -2,18 +2,32 @@ import styled from "styled-components";
 import { FaInstagram } from "react-icons/fa";
 import { SiNaver } from "react-icons/si";
 import { theme } from "../../style/theme";
+import { IoReorderThree } from "react-icons/io5";
+import { useState } from "react";
+import Category from "./Category";
 
 export default function Header() {
+  const [categoryOpen, setCategoryOpen] = useState(false);
+
+  const openCategory = () => {
+    setCategoryOpen(true);
+  };
+  const closeCategory = () => {
+    setCategoryOpen(false);
+  };
+
   return (
     <StyledHeader>
       <div className="logo">
         <img src="arplanet.jpg" />
         <span>ARPLANET</span>
       </div>
-      <div className="sns">
-        <FaInstagram />
-        <SiNaver />
-      </div>
+      {categoryOpen && <Category closeCategory={closeCategory} />}
+      {!categoryOpen && (
+        <div className="category">
+          <IoReorderThree onClick={openCategory} />
+        </div>
+      )}
     </StyledHeader>
   );
 }
@@ -49,10 +63,11 @@ const StyledHeader = styled.div`
     }
   }
 
-  .sns {
-    font-size: ${theme.text.size.large};
+  .category {
+    font-size: ${theme.text.size.extralarge};
     svg {
       margin-left: 10px;
+      cursor: pointer;
     }
   }
 `;
