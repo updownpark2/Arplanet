@@ -18,7 +18,8 @@ export default function Footer() {
           </span>
         </div>
         <div className="copyright">
-          ⓒ ARPLANET. all rights reserved. degined & developed by UPDOWN.
+          <span>ⓒ ARPLANET. all rights reserved.</span>
+          <span>degined & developed by UPDOWN.</span>
         </div>
       </div>
       <div className="etc">
@@ -36,13 +37,19 @@ export default function Footer() {
 
 const StyledFooter = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+
   background-color: ${theme.color.darkgray};
   color: ${theme.color.white};
   width: 100%;
 
   padding: 30px 0;
+
   .information {
+    margin-left: 100px;
+    @media (max-width: ${theme.viewSize.phone}) {
+      margin-left: 50px;
+    }
     div {
       margin-top: 20px;
     }
@@ -67,9 +74,15 @@ const StyledFooter = styled.div`
       font-size: ${theme.text.size.small};
       font-weight: ${theme.text.weight.thin};
       color: ${theme.color.gray};
+      display: flex;
+      flex-direction: column;
     }
   }
   .etc {
+    margin-right: 100px;
+    @media (max-width: ${theme.viewSize.phone}) {
+      margin-right: 50px;
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
