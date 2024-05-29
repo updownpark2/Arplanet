@@ -3,6 +3,7 @@ import ArtistSlider from "../components/Home/ArtistSlider";
 import ArtistCard from "../components/Home/ArtistCard";
 import { useState } from "react";
 import { ArtistsDummy, IArtistInfo } from "../utils/ArtistDummy";
+import ArplanetPoster from "../components/Home/ArplanetPoster";
 
 export default function Home() {
   const [cardOpen, setCardOpen] = useState(false);
@@ -25,6 +26,7 @@ export default function Home() {
       {cardOpen && (
         <ArtistCard closeCard={closeCard} cardInfo={artistsInfo[cardIndex]} />
       )}
+      <ArplanetPoster />
       <ArtistSlider openCard={openCard} handleCardIndex={handleCardIndex} />
     </StyledHome>
   );
