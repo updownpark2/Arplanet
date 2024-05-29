@@ -42,7 +42,7 @@ const fadeIn = keyframes`
 
 const StyledArtistCard = styled.div`
   width: 30%;
-  height: 70%;
+  height: 60%;
   z-index: 999;
   border-radius: 10px;
   position: absolute;
@@ -56,7 +56,7 @@ const StyledArtistCard = styled.div`
   animation-name: ${fadeIn};
   @media (max-width: ${theme.viewSize.phone}) {
     width: 80%;
-    height: 60%;
+    height: 50%;
   }
   .nav {
     display: flex;
@@ -110,9 +110,9 @@ const StyledArtistCard = styled.div`
   .contents {
     display: flex;
     flex-direction: column;
-    margin: 32px;
+    margin: 32px 32px 32px 40px;
     @media (max-width: ${theme.viewSize.phone}) {
-      margin: 20px;
+      margin: 20px 20px 20px 28px;
     }
     span {
       margin-top: 2px;

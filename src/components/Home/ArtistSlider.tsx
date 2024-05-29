@@ -73,15 +73,16 @@ const StyledArtistSlider = styled.div`
       }
     }
     .slider-artist {
-      font-size: ${theme.text.size.medium};
+      font-size: ${theme.text.size.large};
       font-weight: ${theme.text.weight.thick};
       margin-top: 10px;
       @media (max-width: ${theme.viewSize.phone}) {
-        font-size: ${theme.text.size.small};
+        font-size: ${theme.text.size.medium};
       }
     }
   }
   .swiper-slide {
+    margin-top: 30px;
     text-align: center;
     display: flex;
     flex-direction: column;
