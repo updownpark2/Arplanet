@@ -1,11 +1,21 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Scrollbar } from "swiper/modules";
-
 import "swiper/css";
 import { theme } from "../../style/theme";
+import { ArtistsNameDummy } from "../../utils/ArtistDummy";
 
-export default function ArtistSlider() {
+interface Props {
+  openCard: () => void;
+  handleCardIndex: (i: number) => void;
+}
+
+export default function ArtistSlider({ openCard, handleCardIndex }: Props) {
+  const handleClickArtist = (i: number) => {
+    openCard();
+    handleCardIndex(i);
+  };
+
   return (
     <StyledArtistSlider>
       <div className="slider-title">
@@ -22,7 +32,7 @@ export default function ArtistSlider() {
         scrollbar={{ hide: false }}
         modules={[Scrollbar, Autoplay]}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         breakpoints={{
@@ -31,63 +41,15 @@ export default function ArtistSlider() {
           },
         }}
       >
-        <SwiperSlide>
-          <img src="1.jpeg" />
-          <div className="introduction">
-            <span className="en">CHOI HYE JI</span>
-            <span className="kr">최혜지</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="2.jpeg" />
-          <div className="introduction">
-            <span className="en">BAEK GYE JUN</span>
-            <span className="kr">백계준</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="3.jpeg" />
-          <div className="introduction">
-            <span className="en">JEONG CHE EUN</span>
-            <span className="kr">정채은</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="4.jpeg" />
-          <div className="introduction">
-            <span className="en">YU YE REUM</span>
-            <span className="kr">유예름</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="5.jpeg" />
-          <div className="introduction">
-            <span className="en">KIM SE YEON</span>
-            <span className="kr">김세연</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="6.jpeg" />
-          <div className="introduction">
-            <span className="en">YANG DA WON</span>
-            <span className="kr">양다원</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="7.jpeg" />
-          <div className="introduction">
-            <span className="en">KIM MIN HO</span>
-            <span className="kr">김민호</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="8.jpeg" />
-          <div className="introduction">
-            <span></span>
-            <span className="en">KIM YE BON</span>
-            <span className="kr">김예본</span>
-          </div>
-        </SwiperSlide>
+        {ArtistsNameDummy.map((artist, i) => (
+          <SwiperSlide>
+            <img src={`${i + 1}.jpeg`} onClick={() => handleClickArtist(i)} />
+            <div className="introduction">
+              <div className="en">{artist.en}</div>
+              <div className="kr">{artist.kr}</div>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </StyledArtistSlider>
   );
@@ -95,6 +57,7 @@ export default function ArtistSlider() {
 
 const StyledArtistSlider = styled.div`
   width: 100%;
+  margin-bottom: 15px;
   .slider-title {
     display: flex;
     flex-direction: column;
@@ -131,8 +94,8 @@ const StyledArtistSlider = styled.div`
     }
     img {
       width: 100%;
-
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
     img:hover {
       transform: scale(1.05);
