@@ -4,6 +4,8 @@ import ArtistCard from "../components/Home/ArtistCard";
 import { useState } from "react";
 import { ArtistsDummy, IArtistInfo } from "../utils/ArtistDummy";
 import ArplanetPoster from "../components/Home/ArplanetPoster";
+import ArplanetAbout from "../components/Home/ArplanetAbout";
+import ArplanetHistory from "../components/Home/ArplanetHistory";
 
 export default function Home() {
   const [cardOpen, setCardOpen] = useState(false);
@@ -28,10 +30,13 @@ export default function Home() {
       )}
       <ArplanetPoster />
       <ArtistSlider openCard={openCard} handleCardIndex={handleCardIndex} />
+      <ArplanetAbout />
+      <ArplanetHistory />
     </StyledHome>
   );
 }
 
 const StyledHome = styled.div`
   position: relative;
+  height: 100%;
 `;
