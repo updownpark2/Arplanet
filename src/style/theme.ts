@@ -1,4 +1,10 @@
-export type TextSize = "small" | "semismall" | "medium" | "large";
+export type TextSize =
+  | "verysmall"
+  | "small"
+  | "semismall"
+  | "medium"
+  | "large"
+  | "extralarge";
 export type TextWeiht = "thin" | "semithin" | "medium" | "thick";
 export type Color = "white" | "lightgray" | "gray" | "darkgray" | "black";
 export type ViewSize = "phone" | "pc";
@@ -29,10 +35,12 @@ export const theme: Theme = {
   },
   text: {
     size: {
+      verysmall: "9px",
       small: "12px",
       semismall: "15px",
       medium: "18px",
       large: "24px",
+      extralarge: "30px",
     },
     weight: {
       thin: "100",
