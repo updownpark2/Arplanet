@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
+import { useNavigate } from "react-router-dom";
 
 export default function ArplanetAbout() {
+  const navigator = useNavigate();
+  const goAbout = () => {
+    navigator(`/about`);
+  };
+
   return (
-    <StyledArplanetAbout>
+    <StyledArplanetAbout onClick={goAbout}>
       <img src="minho.jpg" />
       <div className="mention">
         <span>공연의 예술, ARPLANET에서 시작됩니다.</span>

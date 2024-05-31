@@ -1,24 +1,33 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../style/theme";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   closeCategory: () => void;
 }
 
 export default function Category({ closeCategory }: Props) {
+  const navigator = useNavigate();
+  const goAbout = () => {
+    navigator(`/about`);
+    closeCategory();
+  };
+  const goArtist = () => {
+    navigator(`/artist`);
+    closeCategory();
+  };
   return (
     <StyledCategory>
       <div className="header">
         <button onClick={closeCategory}>X</button>
       </div>
       <div className="category">
-        <span>ABOUT</span>
-        <span>ARTIST</span>
+        <span onClick={goAbout}>ABOUT</span>
+        <span onClick={goArtist}>ARTIST</span>
         <span>CONCERT</span>
         <span>TICKET</span>
         <span>NEWS</span>
-        <span>PARTNERS</span>
       </div>
     </StyledCategory>
   );

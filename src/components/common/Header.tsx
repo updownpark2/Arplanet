@@ -5,20 +5,24 @@ import { theme } from "../../style/theme";
 import { IoReorderThree } from "react-icons/io5";
 import { useState } from "react";
 import Category from "./Category";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [categoryOpen, setCategoryOpen] = useState(false);
-
+  const navigator = useNavigate();
   const openCategory = () => {
     setCategoryOpen(true);
   };
   const closeCategory = () => {
     setCategoryOpen(false);
   };
+  const goHome = () => {
+    navigator(`/`);
+  };
 
   return (
     <StyledHeader>
-      <div className="logo">
+      <div className="logo" onClick={goHome}>
         <img src="arplanet.jpg" />
         <span>ARPLANET</span>
       </div>
@@ -44,6 +48,7 @@ const StyledHeader = styled.div`
   .logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
     img {
       width: 150px;
       height: 150px;

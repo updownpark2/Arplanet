@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { IArtistInfo } from "../../utils/ArtistDummy";
 import { theme } from "../../style/theme";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   closeCard: () => void;
@@ -8,6 +9,11 @@ interface Props {
 }
 
 export default function ArtistCard({ closeCard, cardInfo }: Props) {
+  const navigator = useNavigate();
+  const goArtist = () => {
+    navigator(`/artist`);
+  };
+
   return (
     <StyledArtistCard>
       <div className="nav">
@@ -27,6 +33,9 @@ export default function ArtistCard({ closeCard, cardInfo }: Props) {
           <span key={i}>{info}</span>
         ))}
       </div>
+      <div className="more">
+        <button onClick={goArtist}>+ MORE</button>
+      </div>
     </StyledArtistCard>
   );
 }
@@ -42,7 +51,7 @@ const fadeIn = keyframes`
 
 const StyledArtistCard = styled.div`
   width: 30%;
-  height: 60%;
+  height: 70%;
   z-index: 999;
   border-radius: 10px;
   position: absolute;
@@ -115,12 +124,31 @@ const StyledArtistCard = styled.div`
       margin: 20px 20px 20px 28px;
     }
     span {
-      margin-top: 2px;
-      font-size: ${theme.text.size.semismall};
+      margin-top: 5px;
+      font-size: ${theme.text.size.medium};
       font-weight: ${theme.text.weight.semithin};
       @media (max-width: ${theme.viewSize.phone}) {
-        font-size: ${theme.text.size.small};
+        font-size: ${theme.text.size.semismall};
       }
+    }
+  }
+  .more {
+    text-align: center;
+    button {
+      background-color: ${theme.color.white};
+      border: none;
+      font-weight: ${theme.text.weight.medium};
+      font-size: ${theme.text.size.medium};
+      @media (max-width: ${theme.viewSize.phone}) {
+        font-size: ${theme.text.size.semismall};
+        margin-top: 20px;
+      }
+
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    button:hover {
+      transform: scale(1.1);
     }
   }
 `;
