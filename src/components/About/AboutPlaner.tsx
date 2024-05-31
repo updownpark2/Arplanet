@@ -106,6 +106,9 @@ const StyledAboutPlaner = styled.div`
           font-weight: ${theme.text.weight.semithin};
         }
       }
+      span {
+        margin-top: 3px;
+      }
     }
   }
 
