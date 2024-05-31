@@ -6,6 +6,7 @@ import { ArtistsDummy, IArtistInfo } from "../utils/ArtistDummy";
 import ArplanetPoster from "../components/Home/ArplanetPoster";
 import ArplanetAbout from "../components/Home/ArplanetAbout";
 import ArplanetHistory from "../components/Home/ArplanetHistory";
+import ArplanetKaKao from "../components/Home/ArplanetKaKao";
 
 export default function Home() {
   const [cardOpen, setCardOpen] = useState(false);
@@ -32,6 +33,7 @@ export default function Home() {
       <ArtistSlider openCard={openCard} handleCardIndex={handleCardIndex} />
       <ArplanetAbout />
       <ArplanetHistory />
+      <ArplanetKaKao />
     </StyledHome>
   );
 }

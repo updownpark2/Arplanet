@@ -21,8 +21,8 @@ export default function ArplanetHistory() {
         </span>
       </div>
       <div className="history">
-        <span>- 2024.01.13 아르플래닛 창단</span>
-        <span>- 2024.01.31 아르플래닛 창단 기념 음악회</span>
+        <span>- 2024.01.31 아르플래닛 창단</span>
+        <span>- 2024.04.28 아르플래닛 창단 기념 음악회</span>
         <span>- 2024.07.11 광주문화재단 목요콘서트 &lt;색채의 멜로디&gt;</span>
         <span>- 2024.07.24 아르플래닛 초청 안소연 피아노 독주회</span>
         <span>
@@ -35,10 +35,11 @@ export default function ArplanetHistory() {
 }
 
 const StyledArplanetHistory = styled.div`
-  margin-left: 20%;
-  padding: 50px;
+  margin-left: 10%;
+  padding: 100px;
   @media (max-width: ${theme.viewSize.phone}) {
-    margin-left: 10%;
+    margin-left: 0;
+    padding: 32px;
   }
   .title {
     display: flex;
@@ -69,12 +70,13 @@ const StyledArplanetHistory = styled.div`
     margin-top: 30px;
     opacity: 0.7;
     span {
-      margin-top: 5px;
+      margin-top: 10px;
       font-size: ${theme.text.size.medium};
       font-weight: ${theme.text.weight.medium};
       @media (max-width: ${theme.viewSize.phone}) {
         font-size: ${theme.text.size.small};
         font-weight: ${theme.text.weight.semithin};
+        margin-top: 5px;
       }
     }
   }

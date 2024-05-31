@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
+import { S3URL } from "../../utils/S3URL";
 
 export default function AboutPoster() {
   return (
     <StyledAboutPoster>
-      <img src="aboutPoster.jpg" />
+      <img src={`${S3URL}aboutPoster.jpg`} />
     </StyledAboutPoster>
   );
 }

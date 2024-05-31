@@ -6,6 +6,7 @@ import { IoReorderThree } from "react-icons/io5";
 import { useState } from "react";
 import Category from "./Category";
 import { useNavigate } from "react-router-dom";
+import { S3URL } from "../../utils/S3URL";
 
 export default function Header() {
   const [categoryOpen, setCategoryOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <div className="logo" onClick={goHome}>
-        <img src="arplanet.jpg" />
+        <img src={`${S3URL}arplanet.jpg`} />
         <span>ARPLANET</span>
       </div>
       {categoryOpen && <Category closeCategory={closeCategory} />}

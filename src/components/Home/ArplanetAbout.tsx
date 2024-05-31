@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
 import { useNavigate } from "react-router-dom";
+import { S3URL } from "../../utils/S3URL";
 
 export default function ArplanetAbout() {
   const navigator = useNavigate();
@@ -10,7 +11,7 @@ export default function ArplanetAbout() {
 
   return (
     <StyledArplanetAbout onClick={goAbout}>
-      <img src="minho.jpg" />
+      <img src={`${S3URL}Minho.jpg`} />
       <div className="mention">
         <span>공연의 예술, ARPLANET에서 시작됩니다.</span>
         <button>ABOUT</button>

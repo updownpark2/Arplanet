@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
+import { S3URL } from "../../utils/S3URL";
 
 export default function AboutContact() {
   return (
@@ -25,7 +26,7 @@ export default function AboutContact() {
         </div>
       </div>
       <div className="poster">
-        <img src="contact.jpeg" />
+        <img src={`${S3URL}contact-1.jpeg`} />
       </div>
     </StyledAboutContact>
   );

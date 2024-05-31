@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Scrollbar } from "swiper/modules";
 import "swiper/css";
 import { theme } from "../../style/theme";
-import { ArtistsNameDummy } from "../../utils/ArtistDummy";
+import { ArtistsDummy } from "../../utils/ArtistDummy";
 
 interface Props {
   openCard: () => void;
@@ -20,9 +20,9 @@ export default function ArtistSlider({ openCard, handleCardIndex }: Props) {
     <StyledArtistSlider>
       <div className="slider-title">
         <span className="slider-intro">
-          아르플래닛은 최고의 아티스트와 함께합니다.
+          아르플래닛은 Artist+Planet의 브랜드명입니다.
         </span>
-        <span className="slider-artist">Meet The Artists</span>
+        <span className="slider-artist">Our Artist</span>
       </div>
       <Swiper
         spaceBetween={10}
@@ -41,9 +41,9 @@ export default function ArtistSlider({ openCard, handleCardIndex }: Props) {
           },
         }}
       >
-        {ArtistsNameDummy.map((artist, i) => (
+        {ArtistsDummy.map((artist, i) => (
           <SwiperSlide>
-            <img src={`${i + 1}.jpeg`} onClick={() => handleClickArtist(i)} />
+            <img src={artist.imgUrl} onClick={() => handleClickArtist(i)} />
             <div className="introduction">
               <div className="en">{artist.en}</div>
               <div className="kr">{artist.kr}</div>

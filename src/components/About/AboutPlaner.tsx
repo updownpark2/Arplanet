@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
+import { S3URL } from "../../utils/S3URL";
 
 export default function AboutPlaner() {
   return (
     <StyledAboutPlaner>
       <div className="planner">
-        <img src="capibara.jpeg" />
+        <img src={`${S3URL}capibara-1.jpeg`} />
         <div className="contents">
           <div className="name">
             <div className="en">
