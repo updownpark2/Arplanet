@@ -3,14 +3,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Scrollbar } from "swiper/modules";
 import "swiper/css";
 import { theme } from "../../style/theme";
-import { ArtistsDummy } from "../../utils/ArtistDummy";
+import { Artists } from "../../model/artists.model";
 
 interface Props {
   openCard: () => void;
   handleCardIndex: (i: number) => void;
+  artists: Artists[];
 }
 
-export default function ArtistSlider({ openCard, handleCardIndex }: Props) {
+export default function ArtistSlider({
+  openCard,
+  handleCardIndex,
+  artists,
+}: Props) {
   const handleClickArtist = (i: number) => {
     openCard();
     handleCardIndex(i);
@@ -41,9 +46,12 @@ export default function ArtistSlider({ openCard, handleCardIndex }: Props) {
           },
         }}
       >
-        {ArtistsDummy.map((artist, i) => (
+        {artists.map((artist, i) => (
           <SwiperSlide>
-            <img src={artist.imgUrl} onClick={() => handleClickArtist(i)} />
+            <img
+              src={`${process.env.REACT_APP_S3_URL}${artist.SimgUrl}`}
+              onClick={() => handleClickArtist(i)}
+            />
             <div className="introduction">
               <div className="en">{artist.en}</div>
               <div className="kr">{artist.kr}</div>

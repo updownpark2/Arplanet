@@ -7,12 +7,12 @@ import ArplanetPoster from "../components/Home/ArplanetPoster";
 import ArplanetAbout from "../components/Home/ArplanetAbout";
 import ArplanetHistory from "../components/Home/ArplanetHistory";
 import ArplanetKaKao from "../components/Home/ArplanetKaKao";
+import { useArtists } from "../hooks/useArtists";
 
 export default function Home() {
   const [cardOpen, setCardOpen] = useState(false);
   const [cardIndex, setCardIndex] = useState(0);
-  const artistsInfo: IArtistInfo[] = ArtistsDummy;
-  // 이후에는 DB에서 가져오도록해야함
+  const { artists } = useArtists();
 
   const openCard = () => {
     setCardOpen(true);
@@ -27,10 +27,14 @@ export default function Home() {
   return (
     <StyledHome>
       {cardOpen && (
-        <ArtistCard closeCard={closeCard} cardInfo={artistsInfo[cardIndex]} />
+        <ArtistCard closeCard={closeCard} cardInfo={artists[cardIndex]} />
       )}
       <ArplanetPoster />
-      <ArtistSlider openCard={openCard} handleCardIndex={handleCardIndex} />
+      <ArtistSlider
+        openCard={openCard}
+        handleCardIndex={handleCardIndex}
+        artists={artists}
+      />
       <ArplanetAbout />
       <ArplanetHistory />
       <ArplanetKaKao />

@@ -2,10 +2,11 @@ import styled, { keyframes } from "styled-components";
 import { IArtistInfo } from "../../utils/ArtistDummy";
 import { theme } from "../../style/theme";
 import { useNavigate } from "react-router-dom";
+import { Artists } from "../../model/artists.model";
 
 interface Props {
   closeCard: () => void;
-  cardInfo: IArtistInfo;
+  cardInfo: Artists;
 }
 
 export default function ArtistCard({ closeCard, cardInfo }: Props) {
@@ -22,14 +23,14 @@ export default function ArtistCard({ closeCard, cardInfo }: Props) {
         </button>
       </div>
       <div className="title">
-        <img src={cardInfo.imgUrl} />
+        <img src={`${process.env.REACT_APP_S3_URL}${cardInfo.SimgUrl}`} />
         <div className="name">
           <div className="en">{cardInfo.en}</div>
           <div className="kr">{cardInfo.kr}</div>
         </div>
       </div>
       <div className="contents">
-        {cardInfo.introduce.map((info, i) => (
+        {cardInfo.edu.map((info, i) => (
           <span key={i}>{info}</span>
         ))}
       </div>
