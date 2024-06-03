@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
+import { IHistroy } from "../../model/history.model";
 
-export default function ArplanetHistory() {
+interface Props {
+  history: IHistroy;
+}
+
+export default function ArplanetHistory({ history }: Props) {
   return (
     <StyledArplanetHistory>
       <div className="title">
@@ -21,14 +26,9 @@ export default function ArplanetHistory() {
         </span>
       </div>
       <div className="history">
-        <span>- 2024.01.31 아르플래닛 창단</span>
-        <span>- 2024.04.28 아르플래닛 창단 기념 음악회</span>
-        <span>- 2024.07.11 광주문화재단 목요콘서트 &lt;색채의 멜로디&gt;</span>
-        <span>- 2024.07.24 아르플래닛 초청 안소연 피아노 독주회</span>
-        <span>
-          - 2024.12.08 2024 북구청 문화예술단체 지원사업 &lt;아르플래닛 협주곡의
-          밤&gt;
-        </span>
+        {history.history.map((data) => (
+          <span>{data}</span>
+        ))}
       </div>
     </StyledArplanetHistory>
   );

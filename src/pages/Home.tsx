@@ -2,18 +2,18 @@ import styled from "styled-components";
 import ArtistSlider from "../components/Home/ArtistSlider";
 import ArtistCard from "../components/Home/ArtistCard";
 import { useState } from "react";
-import { ArtistsDummy, IArtistInfo } from "../utils/ArtistDummy";
 import ArplanetPoster from "../components/Home/ArplanetPoster";
 import ArplanetAbout from "../components/Home/ArplanetAbout";
 import ArplanetHistory from "../components/Home/ArplanetHistory";
 import ArplanetKaKao from "../components/Home/ArplanetKaKao";
 import { useArtists } from "../hooks/useArtists";
+import { useHistory } from "../hooks/useHistory";
 
 export default function Home() {
   const [cardOpen, setCardOpen] = useState(false);
   const [cardIndex, setCardIndex] = useState(0);
   const { artists } = useArtists();
-
+  const { history } = useHistory();
   const openCard = () => {
     setCardOpen(true);
   };
@@ -36,7 +36,7 @@ export default function Home() {
         artists={artists}
       />
       <ArplanetAbout />
-      <ArplanetHistory />
+      {history && <ArplanetHistory history={history} />}
       <ArplanetKaKao />
     </StyledHome>
   );
