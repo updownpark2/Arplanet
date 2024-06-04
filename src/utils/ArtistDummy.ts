@@ -1,5 +1,5 @@
 import { S3URL } from "./S3URL";
-
+/*
 export interface IArtistInfo {
   en: string;
   kr: string;
@@ -178,3 +178,4 @@ export const ArtistsDetailDummy: IArtistInfo[] = [
     imgUrl: `${S3URL}6ar.jpg`,
   },
 ];
+*/

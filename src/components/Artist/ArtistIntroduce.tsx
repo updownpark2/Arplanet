@@ -1,22 +1,31 @@
 import styled from "styled-components";
-import { ArtistsDetailDummy } from "../../utils/ArtistDummy";
 import { theme } from "../../style/theme";
+import { Artists } from "../../model/artists.model";
 
-export default function ArtistIntroduce() {
+interface Props {
+  artists: Artists[];
+}
+
+export default function ArtistIntroduce({ artists }: Props) {
+  artists = artists.filter((data, i) => i !== 0);
+
   return (
     <StyledArtistIntroduce>
       <div className="artists">
-        {ArtistsDetailDummy.map((data, i) => (
+        {artists.map((data, i) => (
           <div className="artist">
             <div className="poster">
-              <img src={data.imgUrl} />
+              <img src={`${process.env.REACT_APP_S3_URL}${data.AimgUrl}`} />
             </div>
 
             <div className="contents">
               <span className="en">{data.en}</span>
               <span className="kr">{data.kr}</span>
               <div className="carrer">
-                {data.introduce.map((info) => (
+                {data.edu?.map((info) => (
+                  <span>{info}</span>
+                ))}
+                {data.carrer?.map((info) => (
                   <span>{info}</span>
                 ))}
               </div>
