@@ -4,6 +4,7 @@ import { theme } from "../../style/theme";
 import { S3URL } from "../../utils/S3URL";
 import e from "express";
 import ConcertZero from "./ConcertZero";
+import { Link } from "react-router-dom";
 
 interface Props {
   concert: Concert[];
@@ -17,14 +18,16 @@ export default function ConcertLists({ concert }: Props) {
     <StyledConcertLists>
       <div className="lists">
         {concert.map((data) => (
-          <div className="list">
-            <img src={`${S3URL}${data.mainImg}`} />
-            <div className="text">
-              <span className="title">{data.title}</span>
-              <span className="date">{data.date}</span>
-              <span className="location">{data.location}</span>
+          <Link to={`/concert/detail`} state={{ data: data }}>
+            <div className="list">
+              <img src={`${S3URL}${data.mainImg}`} />
+              <div className="text">
+                <span className="title">{data.title}</span>
+                <span className="date">{data.date}</span>
+                <span className="location">{data.location}</span>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </StyledConcertLists>
@@ -36,6 +39,24 @@ const StyledConcertLists = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a:focus {
+    text-decoration: none;
+  }
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
+
   .lists {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
