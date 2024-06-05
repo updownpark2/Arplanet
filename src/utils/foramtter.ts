@@ -1,0 +1,34 @@
+export const showYearFormatter = (year: string): string => {
+  if (year === "all") {
+    return "전체";
+  } else if (year === "2024") {
+    return "2024";
+  }
+  return "2023";
+};
+
+export const showStatusFormatter = (status: string): string => {
+  if (status === "all") {
+    return "전체";
+  } else if (status === "proceeding") {
+    return "진행중";
+  }
+  return "종료";
+};
+
+export const showPlanFormatter = (plan: string): string => {
+  if (plan === "all") {
+    return "전체";
+  } else if (plan === "individual") {
+    return "최혜지 개인기획공연";
+  } else {
+    return "아르플래닛 단체공연";
+  }
+};
+
+export const showSortFormatter = (sort: string): string => {
+  if (sort === "ASC") {
+    return "오래된순";
+  }
+  return "최신순";
+};
