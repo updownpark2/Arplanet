@@ -3,6 +3,10 @@ import axios from "axios";
 export const http = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
   timeout: 1000,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": true,
+  },
 });
 
 http.interceptors.response.use(

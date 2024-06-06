@@ -37,6 +37,22 @@ const StyledNewsLists = styled.div`
   a {
     text-decoration: none;
   }
+
+  a:link {
+    color: black;
+  }
+
+  a:visited {
+    color: black;
+  }
+
+  a:hover {
+    color: black;
+  }
+
+  a:active {
+    color: black;
+  }
   a:visited {
     color: black;
   }

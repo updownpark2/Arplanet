@@ -14,7 +14,7 @@ export default function ArplanetAbout() {
       <img src={`${S3URL}Minho.jpg`} />
       <div className="mention">
         <span>공연의 예술, ARPLANET에서 시작됩니다.</span>
-        <button>ABOUT</button>
+        <span className="button">ABOUT</span>
       </div>
     </StyledArplanetAbout>
   );
@@ -53,11 +53,12 @@ const StyledArplanetAbout = styled.div`
     }
     display: flex;
     flex-direction: column;
-    button {
+    .button {
       margin-top: 20px;
       width: fit-content;
       font-size: ${theme.text.size.semismall};
       background-color: ${theme.color.white};
+      color: ${theme.color.black};
       padding: 10px;
       @media (max-width: ${theme.viewSize.phone}) {
         margin-top: 10px;

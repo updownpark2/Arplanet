@@ -65,12 +65,13 @@ const StyledArtistCard = styled.div`
   animation-name: ${fadeIn};
   @media (max-width: ${theme.viewSize.phone}) {
     width: 80%;
-    height: 50%;
+    height: 62%;
   }
   .nav {
     display: flex;
     justify-content: end;
     button {
+      color: ${theme.color.black};
       margin-top: 10px;
       margin-right: 10px;
       padding: 5px;
@@ -136,6 +137,7 @@ const StyledArtistCard = styled.div`
     text-align: center;
     button {
       background-color: ${theme.color.white};
+      color: ${theme.color.black};
       border: none;
       font-weight: ${theme.text.weight.medium};
       font-size: ${theme.text.size.medium};
