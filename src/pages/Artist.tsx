@@ -3,15 +3,19 @@ import ArtistPoster from "../components/Artist/ArtistPoster";
 import ArtistMention from "../components/Artist/ArtistMetion";
 import ArtistIntroduce from "../components/Artist/ArtistIntroduce";
 import { useArtists } from "../hooks/useArtists";
+import ArtistMeta from "../metadatas/ArtistMeta";
 
 export default function Artist() {
   const { artists } = useArtists();
   return (
-    <StyledArtist>
-      <ArtistPoster />
-      <ArtistMention />
-      <ArtistIntroduce artists={artists} />
-    </StyledArtist>
+    <>
+      <ArtistMeta />
+      <StyledArtist>
+        <ArtistPoster />
+        <ArtistMention />
+        <ArtistIntroduce artists={artists} />
+      </StyledArtist>
+    </>
   );
 }
 

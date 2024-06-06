@@ -8,6 +8,7 @@ import ArplanetHistory from "../components/Home/ArplanetHistory";
 import ArplanetKaKao from "../components/Home/ArplanetKaKao";
 import { useArtists } from "../hooks/useArtists";
 import { useHistory } from "../hooks/useHistory";
+import HomeMeta from "../metadatas/HomeMeta";
 
 export default function Home() {
   const [cardOpen, setCardOpen] = useState(false);
@@ -25,20 +26,23 @@ export default function Home() {
   };
 
   return (
-    <StyledHome>
-      {cardOpen && (
-        <ArtistCard closeCard={closeCard} cardInfo={artists[cardIndex]} />
-      )}
-      <ArplanetPoster />
-      <ArtistSlider
-        openCard={openCard}
-        handleCardIndex={handleCardIndex}
-        artists={artists}
-      />
-      <ArplanetAbout />
-      {history && <ArplanetHistory history={history} />}
-      <ArplanetKaKao />
-    </StyledHome>
+    <>
+      <HomeMeta />
+      <StyledHome>
+        {cardOpen && (
+          <ArtistCard closeCard={closeCard} cardInfo={artists[cardIndex]} />
+        )}
+        <ArplanetPoster />
+        <ArtistSlider
+          openCard={openCard}
+          handleCardIndex={handleCardIndex}
+          artists={artists}
+        />
+        <ArplanetAbout />
+        {history && <ArplanetHistory history={history} />}
+        <ArplanetKaKao />
+      </StyledHome>
+    </>
   );
 }
 
