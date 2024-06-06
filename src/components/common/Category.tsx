@@ -25,6 +25,10 @@ export default function Category({ closeCategory }: Props) {
     navigator(`/news`);
     closeCategory();
   };
+  const goTicket = () => {
+    navigator(`/ticket`);
+    closeCategory();
+  };
 
   return (
     <StyledCategory>
@@ -36,7 +40,7 @@ export default function Category({ closeCategory }: Props) {
         <span onClick={goArtist}>ARTIST</span>
         <span onClick={goConcert}>CONCERT</span>
         <span onClick={goNews}>NEWS</span>
-        <span>TICKET</span>
+        <span onClick={goTicket}>TICKET</span>
       </div>
     </StyledCategory>
   );

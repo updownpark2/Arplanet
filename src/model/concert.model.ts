@@ -20,4 +20,5 @@ export interface Concert {
   plan: string;
   year: string;
   artists: string[];
+  ticketUrl: string;
 }

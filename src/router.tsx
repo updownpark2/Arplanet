@@ -6,6 +6,7 @@ import Artist from "./pages/Artist";
 import Concert from "./pages/Concert";
 import ConcertDetail from "./components/Concert/ConcertDetail";
 import News from "./pages/News";
+import Ticket from "./pages/Ticket";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +54,14 @@ export const router = createBrowserRouter([
     element: (
       <Layout>
         <News />
+      </Layout>
+    ),
+  },
+  {
+    path: "/ticket",
+    element: (
+      <Layout>
+        <Ticket />
       </Layout>
     ),
   },
