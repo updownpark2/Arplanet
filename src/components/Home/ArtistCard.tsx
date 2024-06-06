@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { IArtistInfo } from "../../utils/ArtistDummy";
 import { theme } from "../../style/theme";
 import { useNavigate } from "react-router-dom";
 import { Artists } from "../../model/artists.model";

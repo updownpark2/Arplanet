@@ -127,8 +127,8 @@ export default function ConcertFilter() {
           {isActiveP && (
             <div className="option" onClick={handlePlanOption}>
               <li id="all">전체</li>
-              <li id="team">아르플래닛 단체공연</li>
-              <li id="individual">최혜지 개인기획공연</li>
+              <li id="team">아르플래닛 주최/주관 공연</li>
+              <li id="individual">최혜지 개인프로젝트</li>
             </div>
           )}
         </div>
@@ -197,7 +197,7 @@ const StyledConcertFilter = styled.div`
         font-size: ${theme.text.size.semismall};
         font-weight: ${theme.text.weight.medium};
         @media (max-width: ${theme.viewSize.phone}) {
-          font-size: ${theme.text.size.small};
+          font-size: ${theme.text.size.verysmall};
           font-weight: ${theme.text.weight.semithin};
           padding: 5px 10px;
         }

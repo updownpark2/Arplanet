@@ -111,6 +111,26 @@ const StyledAboutContact = styled.div`
         }
       }
     }
+
+    .kakao {
+      display: flex;
+      flex-direction: column;
+      .subtitle {
+        margin-top: 10px;
+        font-size: ${theme.text.size.large};
+        @media (max-width: ${theme.viewSize.phone}) {
+          font-size: ${theme.text.size.medium};
+        }
+      }
+      .information {
+        margin-top: 6px;
+        font-size: ${theme.text.size.semismall};
+        font-weight: ${theme.text.weight.semithin};
+        @media (max-width: ${theme.viewSize.phone}) {
+          font-size: ${theme.text.size.small};
+        }
+      }
+    }
   }
   .poster {
     width: 40%;

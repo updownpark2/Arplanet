@@ -42,7 +42,7 @@ const StyledArplanetAbout = styled.div`
     top: 50%;
     left: 55%;
     transform: translate(-50%, -50%);
-    z-index: 999;
+    z-index: 99;
     color: ${theme.color.white};
     font-weight: ${theme.text.weight.medium};
     font-size: ${theme.text.size.extralarge};
@@ -61,7 +61,7 @@ const StyledArplanetAbout = styled.div`
       padding: 10px;
       @media (max-width: ${theme.viewSize.phone}) {
         margin-top: 10px;
-        font-size: ${theme.text.size.small};
+        font-size: ${theme.text.size.verysmall};
         padding: 5px;
       }
       border: none;

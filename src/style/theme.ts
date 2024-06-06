@@ -6,7 +6,13 @@ export type TextSize =
   | "large"
   | "extralarge";
 export type TextWeiht = "thin" | "semithin" | "medium" | "thick";
-export type Color = "white" | "lightgray" | "gray" | "darkgray" | "black";
+export type Color =
+  | "white"
+  | "lightgray"
+  | "gray"
+  | "darkgray"
+  | "black"
+  | "brown";
 export type ViewSize = "phone" | "pc";
 //"white" | "#eeeee" | "#ccc" | "#616161" |"black";
 
@@ -32,6 +38,7 @@ export const theme: Theme = {
     gray: "#ccc",
     darkgray: "#616161",
     black: "black",
+    brown: "#964b00",
   },
   text: {
     size: {

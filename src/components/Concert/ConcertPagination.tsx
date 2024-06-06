@@ -1,16 +1,12 @@
 import styled from "styled-components";
 import { useConcertTotal } from "../../hooks/useConcertTotal";
-import { useEffect } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
-import {
-  CONCERT_QUERYSTRING_KEY,
-  CONCERT_QUERYSTRING_VALUE,
-} from "../../constants/ConcertQuery";
+import { useSearchParams } from "react-router-dom";
+import { CONCERT_QUERYSTRING_KEY } from "../../constants/ConcertQuery";
 import { theme } from "../../style/theme";
 
 export default function ConcertPagination() {
   const { concertTotal } = useConcertTotal();
-  const location = useLocation();
+
   const pageArr = Array.from(
     { length: Math.ceil(concertTotal.total / 8) },
     () => null

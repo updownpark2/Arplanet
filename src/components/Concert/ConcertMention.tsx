@@ -19,8 +19,8 @@ export default function ConcertMention() {
           이 환상적인 음악의 축제에 여러분을 초대합니다.
         </span>
         <span>
-          아르플래닛 공연은 최혜지 개인 프로젝트와 아르플래닛 단체 프로젝트로
-          나뉘어 꾸준히 기획해 나아가고 있습니다.
+          아르플래닛 공연은 아르플래닛 주최/주관 공연과 최혜지 개인 프로젝트로
+          나뉘어 꾸준히 기획되어 나아가고 있습니다.
         </span>
       </div>
     </StyledConcertMention>
@@ -33,13 +33,13 @@ const StyledConcertMention = styled.div`
 
   padding: 100px;
   @media (max-width: ${theme.viewSize.phone}) {
-    padding: 40px;
+    padding: 20px;
   }
   .title {
     display: flex;
     flex-direction: column;
     font-size: ${theme.text.size.extralarge};
-    font-weight: ${theme.text.weight.medium};
+    font-weight: ${theme.text.weight.thick};
     @media (max-width: ${theme.viewSize.phone}) {
       font-size: ${theme.text.size.large};
     }
@@ -54,7 +54,7 @@ const StyledConcertMention = styled.div`
     font-weight: ${theme.text.weight.semithin};
     @media (max-width: ${theme.viewSize.phone}) {
       font-size: ${theme.text.size.semismall};
-      font-weight: ${theme.text.weight.thin};
+      font-weight: ${theme.text.weight.semithin};
     }
     span {
       margin-top: 20px;

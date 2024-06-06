@@ -10,16 +10,13 @@ export default function ArtistMention() {
       <div className="contents">
         <span>
           아르플래닛의 연주자들은 예술적 열정과 뛰어난 실력을 겸비한 클래식
-          음악의 진정한 주역들입니다. 각각의 연주자는 고유한 예술적 개성과
-          깊이를 지니고 있으며, 그들의 음악은 청중에게 감동과 영감을 선사합니다.
-          아르플래닛은 이러한 뛰어난 연주자들이 모여 하나의 조화를 이루며,
-          클래식 음악의 아름다움을 전파하는 특별한 무대입니다.
+          음악의 주역들입니다. 각각의 연주자는 고유한 예술적 개성과 깊이를
+          지니고 있으며,
         </span>
         <span>
-          우리의 연주자들은 각자의 분야에서 탁월한 역량을 발휘하며, 국내외
-          유수의 무대에서 찬사를 받아온 실력자들입니다. 그들은 클래식 음악의
-          전통을 존중하면서도, 혁신적이고 창의적인 해석을 통해 새로운 음악적
-          경지를 개척하고 있습니다.
+          그들의 음악은 청중에게 감동과 영감을 선사합니다. 아르플래닛은 이러한
+          뛰어난 연주자들이 모여 하나의 조화를 이루며, 클래식 음악의 아름다움을
+          전파하는 특별한 무대입니다.
         </span>
         <span>
           아르플래닛의 연주자들은 음악을 통해 이야기하고, 그 이야기 속에서
@@ -40,7 +37,7 @@ export default function ArtistMention() {
 const StyledArtistMention = styled.div`
   padding: 100px;
   @media (max-width: ${theme.viewSize.phone}) {
-    padding: 32px;
+    padding: 20px;
   }
   display: flex;
   flex-direction: column;
@@ -56,11 +53,12 @@ const StyledArtistMention = styled.div`
     display: flex;
     flex-direction: column;
     span {
-      margin-bottom: 20px;
-      font-size: ${theme.text.size.medium};
+      margin-bottom: 15px;
+      font-size: ${theme.text.size.large};
       font-weight: ${theme.text.weight.semithin};
       @media (max-width: ${theme.viewSize.phone}) {
         font-size: ${theme.text.size.semismall};
+        font-weight: ${theme.text.weight.semithin};
       }
     }
   }

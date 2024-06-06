@@ -20,9 +20,9 @@ export const showPlanFormatter = (plan: string): string => {
   if (plan === "all") {
     return "전체";
   } else if (plan === "individual") {
-    return "최혜지 개인기획공연";
+    return "최혜지 개인프로젝트";
   } else {
-    return "아르플래닛 단체공연";
+    return "아르플래닛 주최/주관 공연";
   }
 };
 

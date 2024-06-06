@@ -3,6 +3,7 @@ import { CiMail } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { SiNaver } from "react-icons/si";
 import { theme } from "../../style/theme";
+import ArplanetKaKao from "../Home/ArplanetKaKao";
 
 export default function Footer() {
   return (
@@ -22,15 +23,7 @@ export default function Footer() {
           <span>degined & developed by UPDOWN.</span>
         </div>
       </div>
-      <div className="etc">
-        <div className="news">
-          <button>NEWS</button>
-        </div>
-        <div className="sns">
-          <FaInstagram />
-          <SiNaver />
-        </div>
-      </div>
+      <div className="etc"></div>
     </StyledFooter>
   );
 }

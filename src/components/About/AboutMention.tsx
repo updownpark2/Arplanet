@@ -48,20 +48,17 @@ export default function AboutMention() {
 const StyledAboutMention = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
-  padding: 50px;
+  padding: 100px;
   @media (max-width: ${theme.viewSize.phone}) {
-    margin-left: 5%;
     padding: 20px;
   }
   .title {
     display: flex;
     flex-direction: column;
     font-size: ${theme.text.size.extralarge};
-    font-weight: ${theme.text.weight.medium};
+    font-weight: ${theme.text.weight.thick};
     @media (max-width: ${theme.viewSize.phone}) {
       font-size: ${theme.text.size.large};
-      font-weight: ${theme.text.weight.semithin};
     }
     span {
       margin-top: 10px;
@@ -74,7 +71,7 @@ const StyledAboutMention = styled.div`
     font-weight: ${theme.text.weight.semithin};
     @media (max-width: ${theme.viewSize.phone}) {
       font-size: ${theme.text.size.semismall};
-      font-weight: ${theme.text.weight.thin};
+      font-weight: ${theme.text.weight.semithin};
     }
 
     span {

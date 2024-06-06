@@ -30,7 +30,7 @@ export default function ConcertDetail() {
         {data.artists.slice(0, 4).map((artist) => (
           <span className="content">{artist} </span>
         ))}
-        <span className="limit">최대 4명까지 보여집니다.</span>
+        <span className="limit">&lt;최대 4명까지 보여집니다&gt;</span>
       </div>
       <div className="poster">
         <img src={`${S3URL}${data.mainImg}`} />
@@ -72,6 +72,7 @@ const StyledConcertDetail = styled.div`
       margin-left: 20px;
       @media (max-width: ${theme.viewSize.phone}) {
         font-size: ${theme.text.size.small};
+        margin-left: 10px;
       }
     }
   }

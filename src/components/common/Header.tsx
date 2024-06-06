@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { FaInstagram } from "react-icons/fa";
-import { SiNaver } from "react-icons/si";
 import { theme } from "../../style/theme";
 import { IoReorderThree } from "react-icons/io5";
 import { useState } from "react";
@@ -25,7 +23,7 @@ export default function Header() {
     <StyledHeader>
       <div className="logo" onClick={goHome}>
         <img src={`${S3URL}arplanet.jpg`} />
-        <span>ARPLANET</span>
+        <span>아르플래닛</span>
       </div>
       {categoryOpen && <Category closeCategory={closeCategory} />}
       {!categoryOpen && (
