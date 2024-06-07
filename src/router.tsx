@@ -7,6 +7,7 @@ import Concert from "./pages/Concert";
 import ConcertDetail from "./components/Concert/ConcertDetail";
 import News from "./pages/News";
 import Ticket from "./pages/Ticket";
+import CEO from "./pages/CEO";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,14 @@ export const router = createBrowserRouter([
     element: (
       <Layout>
         <Home />
+      </Layout>
+    ),
+  },
+  {
+    path: "/ceo",
+    element: (
+      <Layout>
+        <CEO />
       </Layout>
     ),
   },

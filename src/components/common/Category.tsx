@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../style/theme";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -9,6 +8,10 @@ interface Props {
 
 export default function Category({ closeCategory }: Props) {
   const navigator = useNavigate();
+  const goCEO = () => {
+    navigator(`/ceo`);
+    closeCategory();
+  };
   const goAbout = () => {
     navigator(`/about`);
     closeCategory();
@@ -36,6 +39,7 @@ export default function Category({ closeCategory }: Props) {
         <button onClick={closeCategory}>X</button>
       </div>
       <div className="category">
+        <span onClick={goCEO}>CEO</span>
         <span onClick={goAbout}>ABOUT</span>
         <span onClick={goArtist}>ARTIST</span>
         <span onClick={goConcert}>CONCERT</span>
@@ -68,6 +72,7 @@ const StyledCategory = styled.div`
   opacity: 0.8;
   right: 0;
   background-color: ${theme.color.lightgray};
+
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-name: ${fadeIn};
@@ -86,6 +91,7 @@ const StyledCategory = styled.div`
       background-color: ${theme.color.lightgray};
       font-size: ${theme.text.size.medium};
       font-weight: ${theme.text.weight.thick};
+      color: ${theme.color.black};
       cursor: pointer;
     }
   }

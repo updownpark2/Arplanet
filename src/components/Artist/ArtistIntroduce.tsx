@@ -101,7 +101,7 @@ const StyledArtistIntroduce = styled.div`
             font-weight: ${theme.text.weight.semithin};
             @media (max-width: ${theme.viewSize.phone}) {
               font-size: ${theme.text.size.verysmall};
-              font-weight: ${theme.text.weight.thin};
+              font-weight: ${theme.text.weight.semithin};
               margin-top: 5px;
             }
           }

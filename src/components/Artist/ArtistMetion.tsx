@@ -27,7 +27,7 @@ export default function ArtistMention() {
         <span>
           아르플래닛과 함께하는 여정에서, 이 놀라운 연주자들을 만나보세요.
           그들의 음악이 여러분의 마음에 울림을 주고, 예술의 세계로 안내할
-          것입니다
+          것입니다.
         </span>
       </div>
     </StyledArtistMention>

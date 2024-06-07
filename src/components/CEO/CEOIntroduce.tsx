@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { theme } from "../../style/theme";
-import { S3URL } from "../../utils/S3URL";
 import { CEO } from "../../model/ceo.model";
+import { S3URL } from "../../utils/S3URL";
+import { theme } from "../../style/theme";
 
 interface Props {
   ceoData: CEO;
 }
 
-export default function AboutPlaner({ ceoData }: Props) {
+export default function CEOIntroduce({ ceoData }: Props) {
   return (
-    <StyledAboutPlaner>
+    <StyledCEOIntroduce>
       <div className="planner">
         <img src={`${S3URL}capibara-1.jpeg`} />
         <div className="contents">
@@ -56,11 +56,11 @@ export default function AboutPlaner({ ceoData }: Props) {
           ))}
         </div>
       </div>
-    </StyledAboutPlaner>
+    </StyledCEOIntroduce>
   );
 }
 
-const StyledAboutPlaner = styled.div`
+const StyledCEOIntroduce = styled.div`
   display: flex;
   flex-direction: column;
   .planner {
@@ -89,7 +89,7 @@ const StyledAboutPlaner = styled.div`
       font-weight: ${theme.text.weight.semithin};
       @media (max-width: ${theme.viewSize.phone}) {
         font-size: ${theme.text.size.semismall};
-        font-weight: ${theme.text.weight.thin};
+        font-weight: ${theme.text.weight.semithin};
       }
       .subtitle {
         font-size: ${theme.text.size.large};
