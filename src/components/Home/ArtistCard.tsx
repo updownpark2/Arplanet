@@ -10,8 +10,12 @@ interface Props {
 
 export default function ArtistCard({ closeCard, cardInfo }: Props) {
   const navigator = useNavigate();
-  const goArtist = () => {
-    navigator(`/artist`);
+  const goMove = (i: string) => {
+    if (i === "최혜지") {
+      navigator(`/ceo`);
+    } else {
+      navigator(`/artist`);
+    }
   };
 
   return (
@@ -34,7 +38,7 @@ export default function ArtistCard({ closeCard, cardInfo }: Props) {
         ))}
       </div>
       <div className="more">
-        <button onClick={goArtist}>+ MORE</button>
+        <button onClick={() => goMove(cardInfo.kr)}>+ MORE</button>
       </div>
     </StyledArtistCard>
   );
