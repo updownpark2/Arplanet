@@ -73,6 +73,7 @@ const StyledCEOIntroduce = styled.div`
     }
   }
   .introduce {
+    text-align: left;
     margin-left: 12%;
     padding: 50px;
     @media (max-width: ${theme.viewSize.phone}) {
@@ -97,7 +98,7 @@ const StyledCEOIntroduce = styled.div`
         margin-bottom: 10px;
         @media (max-width: ${theme.viewSize.phone}) {
           font-size: ${theme.text.size.medium};
-          font-weight: ${theme.text.weight.semithin};
+          font-weight: ${theme.text.weight.medium};
         }
       }
       span {
