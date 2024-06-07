@@ -6,9 +6,11 @@ import TicketLists from "../components/Ticket/TicketLists";
 import { useState } from "react";
 import TicketZero from "../components/Ticket/TicketZero";
 import TicketMeta from "../metadatas/TicketMeta";
+import TicketFilter from "../components/Ticket/TicketFilter";
 
 export default function Ticket() {
   const { ticket } = useTicket();
+  console.log(ticket);
   const [open, setOpen] = useState(false);
   const closeCard = () => {
     setOpen(false);
@@ -22,6 +24,7 @@ export default function Ticket() {
       <StyledTicket>
         {open && <TicketZero closeCard={closeCard} />}
         <TicketPoster />
+        <TicketFilter />
         <TicketMention />
         {ticket && <TicketLists ticket={ticket} openCard={openCard} />}
       </StyledTicket>

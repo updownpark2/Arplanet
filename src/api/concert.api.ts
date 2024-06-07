@@ -3,7 +3,6 @@ import { http } from "./http";
 
 export const fetchConcerts = async (params: FetchConcertResponse) => {
   const response = await http.get(`/concert`, { params: params });
-
   return response.data;
 };
 
