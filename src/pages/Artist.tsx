@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ArtistPoster from "../components/Artist/ArtistPoster";
 import ArtistMention from "../components/Artist/ArtistMetion";
 import ArtistIntroduce from "../components/Artist/ArtistIntroduce";
 import { useArtists } from "../hooks/useArtists";
@@ -11,7 +10,6 @@ export default function Artist() {
     <>
       <ArtistMeta />
       <StyledArtist>
-        <ArtistPoster />
         <ArtistMention />
         <ArtistIntroduce artists={artists} />
       </StyledArtist>
